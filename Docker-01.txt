@@ -1,0 +1,19 @@
+Eliminar todas las imagenes: docker rmi -f $(docker images -q)
+
+Listar las imagenes: docker image ls
+
+ELIMINAR contenedor: docker rm -fv nombre
+
+
+docker build --tag apache-centos-wg .
+
+docker history -H nombre imagen
+
+
+-d detachmen
+
+docker run  -d --name centos_de_walle  -p 90:80 apache-centos-wg
+
+90: de nuestra maquina, :80 del contenedor
+
+https://naranjax.udemy.com/course/docker-de-principiante-a-experto/learn/lecture/10581626#overview
