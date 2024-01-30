@@ -1,0 +1,30 @@
+Clase 25. Dockerfile - Creando una imagen con todos los campos.
+
+FROM nginx
+
+RUN usseradd walter
+
+COPY nombre_carpeta_web /usr/share/nginx/html
+
+ENV archivo docker
+
+WORKDIR /usr/share/nginx/html
+
+EXPOSE 90
+
+USER walter
+
+Run echo "Yo soy $(whoami)" > /tmp/yo.html
+
+USER root
+
+RUN cp /tmp/yo.html /usr/share/nginx/html/docker.html
+
+VOLUME /var/log/nginx
+
+CMD nginx -g 'daemon off;'
+
+
+BUILDEO, esta imagen: docker build -t nginx:v1 . 
+
+EJECUTO: docker run -d -p 80:80 nginx:v1
